@@ -105,7 +105,18 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-
+    var lastPressed = false;
+    var otherKey = false;
+    function keyPressed() {
+        if (keyCode === 87) {
+            lastPressed = true;
+        } else {
+            otherKey = true;
+        }
+    }
+    if (lastPressed === false && keyIsPressed === true && otherKey === false) {
+        spelerY -= 5;
+    }
 };
 
 
