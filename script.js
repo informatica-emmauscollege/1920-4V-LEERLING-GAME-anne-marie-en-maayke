@@ -22,8 +22,8 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
-var spelerX = 200; // x-positie van speler
-var spelerY = 100; // y-positie van speler
+var spelerX = 640; // x-positie van speler
+var spelerY = 670; // y-positie van speler
 
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
@@ -110,17 +110,7 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
- if (lastPressed === false && keyIsDown(87) === true) { // toets is net ingedrukt
-        spelerY -= 5;
-    }  
-   
-   // bewaar of de toets is ingedrukt of niet, 
-   // voor de volgende keer dat deze functie wordt uitgevoerd
-        if (keyIsDown(87)) {
-            lastPressed = true;
-        } else {
-            lastPressed = false;
-        }
+
 };
 
 
