@@ -29,7 +29,7 @@ var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
-var vijandY = 0;   // y-positie van vijand
+var vijandY = 720/2;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -57,7 +57,8 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    
+    fill (50,50,50);
+    rect (x, y, 50,50);
 
 };
 
@@ -88,7 +89,11 @@ var tekenSpeler = function(x, y) {
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function() {
+    vijandX = vijandX + 5
     
+    if (vijandX > 1260) {
+        vijandX = 0
+    }
 };
 
 
