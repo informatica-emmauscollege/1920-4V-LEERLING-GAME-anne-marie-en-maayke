@@ -126,28 +126,6 @@ var beweegSpeler = function() {
         }
 };
 
-
-/**
- * Zoekt uit of de vijand is geraakt
- * @returns {boolean} true als vijand is geraakt
- */
-var checkVijandGeraakt = function() {
-
-  return false;
-};
-
-
-/**
- * Zoekt uit of de speler is geraakt
- * bijvoorbeeld door botsing met vijand
- * @returns {boolean} true als speler is geraakt
- */
-var checkSpelerGeraakt = function() {
-    
-  return false;
-};
-
-
 /**
  * Zoekt uit of het spel is afgelopen
  * @returns {boolean} true als het spel is afgelopen
@@ -183,16 +161,6 @@ function draw() {
       beweegVijand();
       beweegKogel();
       beweegSpeler();
-      
-      if (checkVijandGeraakt()) {
-        // punten erbij
-        // nieuwe vijand maken
-      }
-      
-      if (checkSpelerGeraakt()) {
-        // leven eraf of gezondheid verlagen
-        // eventueel: nieuwe speler maken
-      }
 
       tekenVeld();
       tekenVijand(vijandX, vijandY);
