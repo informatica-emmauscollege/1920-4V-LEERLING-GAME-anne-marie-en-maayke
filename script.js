@@ -34,7 +34,7 @@ var vijandY = 720/2;   // y-positie van vijand
 var score = 0; // aantal behaalde punten
 
 
-
+var lastPressed = false; // bijhouden of toets tussendoor is losgelaten
 
 
 /* ********************************************* */
@@ -110,7 +110,17 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-
+    if (lastPressed === false && keyIsDown(87) === true) { // toets is net ingedrukt
+        spelerY -= 5;
+    }  
+   
+   // bewaar of de toets is ingedrukt of niet, 
+   // voor de volgende keer dat deze functie wordt uitgevoerd
+        if (keyIsDown(87)) {
+            lastPressed = true;
+        } else {
+            lastPressed = false;
+        }
 };
 
 
