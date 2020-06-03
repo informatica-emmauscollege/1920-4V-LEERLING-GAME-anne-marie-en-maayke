@@ -60,7 +60,7 @@ var tekenVijand = function(x, y) {
     fill (50,50,50);
     rect (x, y, 50,50);
     fill (255,0,0);
-    ellipse (x + 5,y + 5,10,10); // zodat we zien wat het midden is
+    ellipse (x + 25,y + 25,10,10); // zodat we zien wat het midden is
 };
 
 
