@@ -156,7 +156,10 @@ function setup() {
   background('blue');
 }
 
-var tekenGameOverVeld
+var tekenGameOverVeld = function() {
+    fill(red);
+    rect(20, 20, width - 2 * 20, height - 2 * 20);
+}
 
 
 /**
@@ -181,7 +184,7 @@ function draw() {
       }
       break;
     case GAMEOVER:
-
+        tekenGameOverVeld();
         break;
   }
 }
