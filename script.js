@@ -36,6 +36,8 @@ var score = 0; // aantal behaalde punten
 
 var lastPressed = false; // bijhouden of toets tussendoor is losgelaten
 
+let c = color(255, 204, 0);
+
 
 /* ********************************************* */
 /*      functies die je gebruikt in je game      */
@@ -46,7 +48,7 @@ var lastPressed = false; // bijhouden of toets tussendoor is losgelaten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("purple");
+  fill(c);
   rect(20, 20, width - 2 * 20, height - 2 * 20);
 };
 
