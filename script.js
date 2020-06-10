@@ -153,8 +153,8 @@ function setup() {
 }
 
 var tekenGameOverVeld = function() {
-    fill(red);
-    rect(20, 20, width - 2 * 20, height - 2 * 20);
+    fill(255,0,0);
+    rect(0, 0, width, height);
 }
 
 var tekenGameOverTekst = function() {
