@@ -61,8 +61,6 @@ var tekenVeld = function () {
 var tekenVijand = function(x, y) {
     fill (50,50,50);
     ellipse(x, y, 50, 50);
-    //fill (255,0,0);
-    //ellipse (x ,y ,10,10); // zodat we zien wat het midden is
 };
 
 
@@ -85,8 +83,6 @@ var tekenKogel = function(x, y) {
 var tekenSpeler = function(x, y) {
   fill("white");
   ellipse(x, y, 50, 50);
-  //fill (255,0,0);
-  //ellipse (x,y,10,10); // zodat we zien wat het midden is
 };
 
 
@@ -133,8 +129,8 @@ var beweegSpeler = function() {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function() {
-    if ((abs(spelerX - vijandX) < 50)  &&  // x van vijand en speler in elkaars buurt
-        (abs(spelerY - vijandY) < 50)) {   // y van vijand en speler in elkaars buurt
+    if ((abs(spelerX - vijandX) < 40)  &&  // x van vijand en speler in elkaars buurt
+        (abs(spelerY - vijandY) < 40)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
         return true;   
     } else {
