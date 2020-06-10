@@ -114,7 +114,7 @@ var beweegKogel = function() {
  */
 var beweegSpeler = function() {
     if (lastPressed === false && keyIsDown(87) === true) { // toets is net ingedrukt
-        spelerY -= 5;
+        spelerY -= 10;
     }  
    
    // bewaar of de toets is ingedrukt of niet, 
