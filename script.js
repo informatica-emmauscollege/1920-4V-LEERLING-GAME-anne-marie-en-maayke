@@ -131,8 +131,8 @@ var beweegSpeler = function() {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function() {
-    if ((abs(spelerX - vijandX) < 50)  &&  // x van vijand en speler in elkaars buurt
-        (abs(spelerY - vijandY) < 50)) {   // y van vijand en speler in elkaars buurt
+    if ((abs(spelerX - vijandX) < 75)  &&  // x van vijand en speler in elkaars buurt
+        (abs(spelerY - vijandY) < 75)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
         return true;   
     } else {
