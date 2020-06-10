@@ -59,7 +59,7 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    fill (50,50,50);
+    fill (255, 71, 71);
     ellipse(x, y, 50, 50);
     fill (255,0,0);
     ellipse (x ,y ,10,10); // zodat we zien wat het midden is
@@ -83,7 +83,7 @@ var tekenKogel = function(x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenSpeler = function(x, y) {
-  fill("white");
+  fill(255, 251, 128);
   ellipse(x, y, 50, 50);
   fill (255,0,0);
   ellipse (x,y,10,10); // zodat we zien wat het midden is
