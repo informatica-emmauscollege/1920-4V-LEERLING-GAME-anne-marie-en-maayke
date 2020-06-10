@@ -59,7 +59,7 @@ var tekenVeld = function () {
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function(x, y) {
-    fill (255, 71, 71);
+    fill (65, 139, 196);
     ellipse(x, y, 50, 50);
 };
 
