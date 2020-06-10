@@ -154,6 +154,8 @@ function setup() {
   background('blue');
 }
 
+var tekenGameOverVeld
+
 
 /**
  * draw
@@ -176,5 +178,8 @@ function draw() {
         spelStatus = GAMEOVER;
       }
       break;
+    case GAMEOVER:
+
+        break;
   }
 }
