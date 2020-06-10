@@ -49,7 +49,7 @@ var lastPressed = false; // bijhouden of toets tussendoor is losgelaten
  */
 var tekenVeld = function () {
   fill(179, 232, 228);
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
+  rect(0, 0, width , height );
 };
 
 
