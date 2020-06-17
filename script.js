@@ -158,9 +158,9 @@ var tekenGameOverVeld = function() {
 }
 
 var tekenGameOverTekst = function() {
-    textSize(50);
+    textSize(100);
     fill(255,255,255)
-    text('GAME OVER', 20, 20, 640, 670);
+    text('GAME OVER', 100, 50, 640, 670);
 }
 
 /**
