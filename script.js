@@ -29,7 +29,7 @@ var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
-var vijandY = 100;   // y-positie van vijand
+var vijandY = 35;   // y-positie van vijand
 
 var score = 0; // aantal behaalde punten
 
@@ -60,12 +60,13 @@ var tekenVeld = function () {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y); 
+var tekenVijand = function(x, y){
 fill (65, 139, 196);
-    while (vijandY < 600) {
+    while (y < 600) {
         ellipse(x, y, 50, 50);
-        vijandY += 50;
+    y += 90;
     } 
+}
 
 /**
  * Tekent de kogel of de bal
