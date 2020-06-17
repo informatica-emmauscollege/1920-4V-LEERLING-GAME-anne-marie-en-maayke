@@ -187,6 +187,17 @@ var beweegSpeler = function() {
         }
 };
 
+var resetGame = function() {
+    spelerX = 640; // x-positie van speler
+    spelerY = 670; // y-positie van speler
+    kogelX = 0;    // x-positie van kogel
+    kogelY = 0;    // y-positie van kogel
+    vijandX = 0;   // x-positie van vijand
+    vijandY = 35;   // y-positie van vijand
+    vijandXTwee = 100; 
+    vijandYTwee = 35; 
+}
+
 /**
  * Zoekt uit of het spel is afgelopen
  * @returns {boolean} true als het spel is afgelopen
@@ -196,6 +207,7 @@ var checkGameOver = function() {
         (abs(spelerY - vijandY) < 50)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
         return true;   
+        resetGame();
     } else {
         return false;
     }
