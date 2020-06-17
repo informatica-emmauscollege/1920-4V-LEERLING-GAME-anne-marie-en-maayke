@@ -112,11 +112,11 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-    if (lastPressedW === false && keyIsDown(87) === true) { // toets is net ingedrukt
+    if (lastPressedW === false && keyIsDown(87) === true) { // W toets is net ingedrukt
         spelerY -= 50;
     }  
    
-   // bewaar of de toets is ingedrukt of niet, 
+   // bewaar of de W toets is ingedrukt of niet, 
    // voor de volgende keer dat deze functie wordt uitgevoerd
         if (keyIsDown(87)) {
             lastPressedW = true;
@@ -124,15 +124,17 @@ var beweegSpeler = function() {
             lastPressedW = false;
         }
 
-    if (lastPressedS === false && keyIsDown(83) === true) {
+    if (lastPressedS === false && keyIsDown(83) === true) { // S toets is net ingedrukt
         spelerY += 50;
     }
 
-    if(keyIsDown(83)) {
-        lastPressedS = true;
-    } else {
-        lastPressedS = false;
-    }
+    // bewaar of de S toets is ingedrukt of niet,
+    // voor de volgende keer dat deze functie wordt uitgevoerd
+        if(keyIsDown(83)) {
+            lastPressedS = true;
+        } else {
+            lastPressedS = false;
+        }
 };
 
 /**
@@ -163,11 +165,17 @@ function setup() {
   background('blue');
 }
 
+/**
+ * tekent het rode game over veld
+ */
 var tekenGameOverVeld = function() {
     fill(255,0,0);
     rect(0, 0, width, height);
 }
 
+/**
+ * tekent de 'GAME OVER' tekst
+ */
 var tekenGameOverTekst = function() {
     textSize(150);
     fill(255,255,255);
