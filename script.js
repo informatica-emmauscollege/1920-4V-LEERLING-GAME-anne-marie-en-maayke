@@ -20,7 +20,7 @@
 const UITLEG = 0;
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = GAMEOVER;
+var spelStatus = SPELEN;
 
 var spelerX = 640; // x-positie van speler
 var spelerY = 670; // y-positie van speler
