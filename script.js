@@ -39,6 +39,7 @@ var score = 0; // aantal behaalde punten
 var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
 var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
 var lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
+var lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
 var lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 
 
