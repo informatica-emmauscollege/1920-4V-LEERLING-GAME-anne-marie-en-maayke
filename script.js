@@ -36,6 +36,7 @@ var score = 0; // aantal behaalde punten
 
 var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
 var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
+var lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
 var lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 
 
@@ -125,6 +126,7 @@ var beweegSpeler = function() {
             lastPressedW = false;
         }
 
+
     if (lastPressedS === false && keyIsDown(83) === true) { // S toets is net ingedrukt
         spelerY += 50;
     }
@@ -135,6 +137,33 @@ var beweegSpeler = function() {
             lastPressedS = true;
         } else {
             lastPressedS = false;
+        }
+
+
+    if (lastPressedA === false && keyIsDown(65) === true) { // A toets is net ingedrukt
+        spelerX -= 50;
+    }
+
+    // bewaar of de A toets is ingedrukt of niet,
+    // voor de volgende keer dat deze functie wordt uitgevoerd
+        if(keyIsDown(65)) {
+            lastPressedA = true;
+        } else {
+            lastPressedA = false;
+        }
+
+
+
+    if (lastPressedD === false && keyIsDown(68) === true) { // D toets is net ingedrukt
+        spelerX += 50;
+    }
+
+    // bewaar of de D toets is ingedrukt of niet,
+    // voor de volgende keer dat deze functie wordt uitgevoerd
+        if(keyIsDown(68)) {
+            lastPressedD = true;
+        } else {
+            lastPressedD = false;
         }
 };
 
@@ -183,6 +212,10 @@ var tekenGameOverTekst = function() {
     text('GAME OVER', 200, 200);
 }
 
+/**
+ * checkt of de spatiebalk is ingedrukt
+ * @returns {boolean} true als het spel weer begint
+ */
 var checkSpelen = function() {
     if (lastPressedSPACE === false && keyIsDown(32) === true) { // ' ' toets is net ingedrukt
         return true;
