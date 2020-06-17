@@ -186,6 +186,7 @@ function draw() {
       break;
     case GAMEOVER:
         tekenGameOverVeld();
+        tekenGameOverTekst();
         break;
   }
 }
