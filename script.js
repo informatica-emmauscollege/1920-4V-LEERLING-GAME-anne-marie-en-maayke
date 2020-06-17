@@ -34,7 +34,8 @@ var vijandY = 720/2;   // y-positie van vijand
 var score = 0; // aantal behaalde punten
 
 
-var lastPressed = false; // bijhouden of toets tussendoor is losgelaten
+var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
+var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
 
 
 
@@ -111,17 +112,27 @@ var beweegKogel = function() {
  * Updatet globale variabele spelerX en spelerY
  */
 var beweegSpeler = function() {
-    if (lastPressed === false && keyIsDown(87) === true) { // toets is net ingedrukt
-        spelerY -= 15;
+    if (lastPressedW === false && keyIsDown(87) === true) { // toets is net ingedrukt
+        spelerY -= 50;
     }  
    
    // bewaar of de toets is ingedrukt of niet, 
    // voor de volgende keer dat deze functie wordt uitgevoerd
         if (keyIsDown(87)) {
-            lastPressed = true;
+            lastPressedW = true;
         } else {
-            lastPressed = false;
+            lastPressedW = false;
         }
+
+    if (lastPressedS === false && keyIsDown(83) === true) {
+        spelerY += 50;
+    }
+
+    if(keyIsDown(83)) {
+        lastPressedS = true;
+    } else {
+        lastPressedS = false;
+    }
 };
 
 /**
