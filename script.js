@@ -243,7 +243,7 @@ var tekenGameOverTekst = function() {
     textSize(150);
     fill(255,255,255);
     text('GAME OVER', 200, 200);
-    textSize(125);
+    textSize(75);
     text('druk de spatie balk om opnieuw te beginnen', 150, 400);
 }
 
