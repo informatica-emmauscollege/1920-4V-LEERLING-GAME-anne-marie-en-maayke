@@ -30,6 +30,8 @@ var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 35;   // y-positie van vijand
+var vijandXTwee = 100; 
+var vijandYTwee = 35; 
 
 var score = 0; // aantal behaalde punten
 
@@ -68,6 +70,14 @@ fill (65, 139, 196);
     } 
 }
 
+var tekenVijandTwee = function(x, y){
+fill (65, 139, 196);
+    while (y < 600) {
+        ellipse(x, y, 50, 50);
+    y += 150;
+    } 
+}
+
 /**
  * Tekent de kogel of de bal
  * @param {number} x x-coördinaat
@@ -101,6 +111,13 @@ var beweegVijand = function() {
     }
 };
 
+var beweegVijandTwee = function () {
+    vijandXTwee= vijandXTwee + 5
+
+    if (vijandXTwee > 1260) {
+        vijandXTwee = 0 
+    }
+};
 
 /**
  * Updatet globale variabelen met positie van kogel of bal
@@ -210,11 +227,13 @@ function draw() {
   switch (spelStatus) {
     case SPELEN:
       beweegVijand();
+      beweegVijandTwee();
       beweegKogel();
       beweegSpeler();
 
       tekenVeld();
       tekenVijand(vijandX, vijandY);
+      tekenVijandTwee (vijandXTwee, vijandYTwee);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
 
