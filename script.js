@@ -36,6 +36,7 @@ var score = 0; // aantal behaalde punten
 
 var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
 var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
+var lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 
 
 
@@ -182,6 +183,22 @@ var tekenGameOverTekst = function() {
     text('GAME OVER', 200, 200);
 }
 
+var checkSpelen = function() {
+    if (lastPressedSPACE === false && keyIsDown(32) === true) { // ' ' toets is net ingedrukt
+        return true;
+    } else {
+        return false;
+    }
+
+    // bewaar of de ' ' toets is ingedrukt of niet,
+    // voor de volgende keer dat deze functie wordt uitgevoerd
+        if(keyIsDown(32)) {
+            lastPressedSPACE = true;
+        } else {
+            lastPressedSPACE = false;
+        }
+}
+
 /**
  * draw
  * de code in deze functie wordt meerdere keren per seconde
@@ -204,8 +221,12 @@ function draw() {
       }
       break;
     case GAMEOVER:
-        tekenGameOverVeld();
-        tekenGameOverTekst();
-        break;
+      tekenGameOverVeld();
+      tekenGameOverTekst();
+
+      if (checkSpelen()) {
+        spelStatus = SPELEN;
+      }
+      break;
   }
 }
