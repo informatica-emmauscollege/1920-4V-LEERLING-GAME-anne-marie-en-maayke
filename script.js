@@ -160,7 +160,7 @@ var tekenGameOverVeld = function() {
 var tekenGameOverTekst = function() {
     textSize(150);
     fill(255,255,255);
-    text('GAME OVER', 200, 100, 640, 670);
+    text('GAME OVER', 200, 100);
 }
 
 /**
