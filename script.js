@@ -29,14 +29,10 @@ var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
-var vijandY = 35;   // y-positie van vijand
-var vijand1Y = 35;
-var vijand2Y = 35+150;
-var vijand3Y = 35+2*150;
-var vijand4Y = 35+3*150;
+var vijandY = 35;
 
-var vijandXTwee = 100; 
-var vijandYTwee = 35; 
+var vijandXTwee = 100;  
+var vijandYTwee = [35, 35+150, 35+2*150, 35+3*150];
 
 var score = 0; // aantal behaalde punten
 
@@ -78,11 +74,10 @@ fill (65, 139, 196);
 }
 
 var tekenVijandTwee = function(x, y){
-fill (65, 139, 196);
-ellipse(x, vijand1Y, 50, 50);
-ellipse(x, vijand2Y, 50, 50);
-ellipse(x, vijand3Y, 50, 50);
-ellipse(x, vijand4Y, 50, 50);
+  fill (65, 139, 196);
+  for (var teller =0; teller<vijandYTwee.length; teller=teller+1) {
+    ellipse(x, vijandYTwee[teller], 50, 50);
+  }
 }
 
 /**
@@ -205,7 +200,7 @@ var resetGame = function() {
     vijandX = 0;   // x-positie van vijand
     vijandY = 35;   // y-positie van vijand
     vijandXTwee = 100; 
-    vijandYTwee = 35; 
+    vijandYTwee = [0,100,200,300]; 
 }
 
 /**
@@ -292,7 +287,7 @@ function draw() {
 
       tekenVeld();
       tekenVijand(vijandX, vijandY);
-      tekenVijandTwee (vijandXTwee, vijandYTwee);
+      tekenVijandTwee (vijandXTwee, 0);
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
 
