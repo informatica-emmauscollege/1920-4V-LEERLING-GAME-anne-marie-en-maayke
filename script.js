@@ -30,6 +30,11 @@ var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 35;   // y-positie van vijand
+var vijand1Y = 35;
+var vijand2Y = 35+150;
+var vijand3Y = 35+2*150;
+var vijand4Y = 35+3*150;
+
 var vijandXTwee = 100; 
 var vijandYTwee = 35; 
 
@@ -74,10 +79,10 @@ fill (65, 139, 196);
 
 var tekenVijandTwee = function(x, y){
 fill (65, 139, 196);
-    while (y < 600) {
-        ellipse(x, y, 50, 50);
-    y += 150;
-    } 
+ellipse(x, vijand1Y, 50, 50);
+ellipse(x, vijand2Y, 50, 50);
+ellipse(x, vijand3Y, 50, 50);
+ellipse(x, vijand4Y, 50, 50);
 }
 
 /**
