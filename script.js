@@ -191,14 +191,14 @@ var resetGame = function() {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function() {
-    if ((abs(spelerX - vijandX) < 50)  &&  // x van vijand en speler in elkaars buurt
-        (abs(spelerY - vijandY) < 50)) {   // y van vijand en speler in elkaars buurt
+    for (var i = 0; i < vijandY.length; i = i + 1) {
+      if ((abs(spelerX - vijandX[i]) < 50)  &&  // x van vijand en speler in elkaars buurt
+        (abs(spelerY - vijandY[i]) < 50)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
         return true;   
-        resetGame();
-    } else {
-        return false;
+      } 
     }
+    return false;
 };
 
 
@@ -273,6 +273,7 @@ function draw() {
       tekenSpeler(spelerX, spelerY);
 
       if (checkGameOver()) {
+        resetGame();
         spelStatus = GAMEOVER;
       }
       break;
