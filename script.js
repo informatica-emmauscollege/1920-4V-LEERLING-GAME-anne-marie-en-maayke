@@ -185,6 +185,11 @@ var beweegSpeler = function() {
         } else {
             lastPressedD = false;
         }
+    
+    // zorgt ervoor dat de speler weer beneden te recht komt als die helemaal bovenaan is
+    if (spelerY < 0) {
+        spelerY = 670;
+    }
 };
 
 var resetGame = function() {
