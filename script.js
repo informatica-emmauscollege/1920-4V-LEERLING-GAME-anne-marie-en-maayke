@@ -28,11 +28,10 @@ var spelerY = 670; // y-positie van speler
 var kogelX = 0;    // x-positie van kogel
 var kogelY = 0;    // y-positie van kogel
 
-var vijandX = 0;   // x-positie van vijand
-var vijandY = 35;
-
-var vijandXTwee = [100, 100, 100, 100];  
-var vijandYTwee = [35, 35+150, 35+2*150, 35+3*150];
+var vijandX = [100, 100, 100, 100, 
+               0, 0, 0, 0, 0, 0, 0, 0];  // x-positie van vijanden
+var vijandY = [35, 35+150, 35+2*150, 35+3*150,
+               50,100,150,200,250,300,350,400]; // y-positie van vijanden
 
 var score = 0; // aantal behaalde punten
 
@@ -62,21 +61,11 @@ var tekenVeld = function () {
 
 /**
  * Tekent de vijand
- * @param {number} x x-coördinaat
- * @param {number} y y-coördinaat
  */
-var tekenVijand = function(x, y){
-fill (65, 139, 196);
-    while (y < 600) {
-        ellipse(x, y, 50, 50);
-    y += 90;
-    } 
-}
-
-var tekenVijandTwee = function(x, y){
+var tekenVijand = function(){
   fill (65, 139, 196);
-  for (var teller =0; teller<vijandYTwee.length; teller=teller+1) {
-    ellipse(vijandXTwee[teller], vijandYTwee[teller], 50, 50);
+  for (var i=0; i < vijandY.length; i = i + 1) {
+    ellipse(vijandX[i], vijandY[i], 50, 50);
   }
 }
 
@@ -106,19 +95,11 @@ var tekenSpeler = function(x, y) {
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function() {
-    vijandX = vijandX + 5
-    
-    if (vijandX > 1260) {
-        vijandX = 0
-    }
-};
+    for (var i = 0; i < vijandX.length; i = i + 1) {
+      vijandX[i]= vijandX[i] + 5
 
-var beweegVijandTwee = function () {
-    for (var i=0; i<vijandXTwee.length; i=i+1) {
-      vijandXTwee[i]= vijandXTwee[i] + 5
-
-      if (vijandXTwee[i] > 1260) {
-          vijandXTwee[i] = 0 
+      if (vijandX[i] > 1260) {
+          vijandX[i] = 0 
       }
     }
 };
@@ -199,10 +180,10 @@ var resetGame = function() {
     spelerY = 670; // y-positie van speler
     kogelX = 0;    // x-positie van kogel
     kogelY = 0;    // y-positie van kogel
-    vijandX = 0;   // x-positie van vijand
-    vijandY = 35;   // y-positie van vijand
-    vijandXTwee = [100, 100, 100, 100]; 
-    vijandYTwee = [0,100,200,300]; 
+    vijandX = [100, 100, 100, 100, 
+               0, 0, 0, 0, 0, 0, 0, 0];  // x-positie van vijanden
+    vijandY = [35, 35+150, 35+2*150, 35+3*150,
+               50,100,150,200,250,300,350,400]; // y-positie van vijanden
 }
 
 /**
@@ -283,13 +264,11 @@ function draw() {
   switch (spelStatus) {
     case SPELEN:
       beweegVijand();
-      beweegVijandTwee();
       beweegKogel();
       beweegSpeler();
 
       tekenVeld();
-      tekenVijand(vijandX, vijandY);
-      tekenVijandTwee (0, 0);
+      tekenVijand();
       tekenKogel(kogelX, kogelY);
       tekenSpeler(spelerX, spelerY);
 
