@@ -232,6 +232,12 @@ var vijandY = [0, 35+150, 35+2*150, 35+3*150,
                          69, 150, 425, 610,
                           35+150, 35+3*150, 450,
                            50, 175, 550];               // y-positie van vijanden
+var score = 0; // aantal behaalde punten
+var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
+var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
+var lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
+var lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
+var lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 }
 
 /**
@@ -244,6 +250,7 @@ var checkGameOver = function() {
         (abs(spelerY - vijandY[i]) < 50)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
         return true;   
+        resetGame();
       } 
     }
     return false;
@@ -321,7 +328,6 @@ function draw() {
       tekenSpeler(spelerX, spelerY);
 
       if (checkGameOver()) {
-        resetGame();
         spelStatus = GAMEOVER;
       }
       break;
