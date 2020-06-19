@@ -204,7 +204,7 @@ var resetGame = function() {
     spelerY = 670; // y-positie van speler
     kogelX = 0;    // x-positie van kogel
     kogelY = 0;    // y-positie van kogel
- var vijandX =[0, 0, 0, 0, 
+    vijandX =[0, 0, 0, 0, 
                100, 100,  
                 200, 200, 200, 
                  300, 350, 300, 350, 
@@ -218,7 +218,7 @@ var resetGame = function() {
                          1100, 1100, 1100, 1100,
                           1200, 1200, 1200,
                            1300, 1300, 1300];  // x-positie van vijanden
-var vijandY = [0, 35+150, 35+2*150, 35+3*150,
+    vijandY = [0, 35+150, 35+2*150, 35+3*150,
                50, 450,
                 90,  500, 600,
                   0, 35+150, 35+2*150, 550, 
@@ -232,12 +232,12 @@ var vijandY = [0, 35+150, 35+2*150, 35+3*150,
                          69, 150, 425, 610,
                           35+150, 35+3*150, 450,
                            50, 175, 550];               // y-positie van vijanden
-var score = 0; // aantal behaalde punten
-var lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
-var lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
-var lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
-var lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
-var lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
+score = 0; // aantal behaalde punten
+lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
+lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
+lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
+lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
+lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 }
 
 /**
