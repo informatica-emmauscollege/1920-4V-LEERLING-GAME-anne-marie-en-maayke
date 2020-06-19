@@ -232,12 +232,12 @@ var resetGame = function() {
                          69, 150, 425, 610,
                           35+150, 35+3*150, 450,
                            50, 175, 550];               // y-positie van vijanden
-score = 0; // aantal behaalde punten
-lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
-lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
-lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
-lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
-lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
+    score = 0; // aantal behaalde punten
+    lastPressedW = false; // bijhouden of W toets tussendoor is losgelaten
+    lastPressedS = false; // bijhouden of S toets tussendoor is losgelaten
+    lastPressedA = false; // bijhouden of A toets tussendoor is losgelaten
+    lastPressedD = false; // bijhouden of D toets tussendoor is losgelaten
+    lastPressedSPACE = false; // bijhouden of de ' ' toets tussendoor is losgelaten
 }
 
 /**
@@ -249,8 +249,8 @@ var checkGameOver = function() {
       if ((abs(spelerX - vijandX[i]) < 50)  &&  // x van vijand en speler in elkaars buurt
         (abs(spelerY - vijandY[i]) < 50)) {   // y van vijand en speler in elkaars buurt
         console.log("checkGameOver: geraakt"); 
-        return true;   
         resetGame();
+        return true;   
       } 
     }
     return false;
